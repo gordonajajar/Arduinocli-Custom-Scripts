@@ -1,0 +1,17 @@
+
+# Base command
+BASE_CMD="arduino-cli compile --fqbn arduino:avr:mega
+
+UPL_CMD="arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:mega
+
+# Check if the user provided an argument
+if [ -z "$1" ]; then
+    echo "Usage: ard-do-ser <sketch-path>"
+    exit 1
+fi
+
+# Append the argument to the command and execute it
+$BASE_CMD "$1"
+$UPL_CMD "$1"
+
+$sudo putty /dev/ttyACM0 -serial -sercfg 9600,8,n,1,N

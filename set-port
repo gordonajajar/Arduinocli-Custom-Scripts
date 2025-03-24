@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# check if a new port value is provided
+if [ -z "$1" ]; then
+    echo "Usage: set-port <port-value> (e.g. set-port /dev/ttyUSB0)"
+    exit 1
+fi
+
+NEW_PORT="$1"
+
+# directory containing the scripts (modify if needed)
+SCRIPT_DIR="$HOME/bin/ardcli/"
+
+# loop through each script and replace the port value
+for script in "$SCRIPT_DIR"/ard-*; do
+    if [[ -f "$script" ]]; then
+        # Safely replace /dev/ttyACM0 with the new port
+        sed -i "s|/dev/tty[A-Za-z0-9]*|$NEW_PORT|" "$script"
+        echo "Updated $script"
+    fi
+done
+
+echo "All scripts updated to use port $NEW_PORT"

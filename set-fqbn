@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# check if a new fqbn value is provided
+if [ -z "$1" ]; then
+    echo "Usage: set-fqbn <fqbn-value> (e.g set-fqbn arduino:avr:mega)"
+    exit 1
+fi
+
+NEW_FQBN="$1"
+
+# directory containing the scripts (modify if needed)
+SCRIPT_DIR="$HOME/bin/ardcli/"
+
+# loop through each script and replace the --fqbn value
+for script in "$SCRIPT_DIR"/ard-*; do
+    if [[ -f "$script" ]]; then
+        sed -i "s|--fqbn arduino:[^ ]*|--fqbn $NEW_FQBN|" "$script"
+        echo "Updated $script"
+    fi
+done
+
+echo "All scripts updated to use --fqbn $NEW_FQBN"
