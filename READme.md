@@ -14,7 +14,13 @@ To permanently add a directory to path:
 ```export PATH=$PATH:/home/user/bin/ardcli/```
 
 - The FQBN (default is arduino:avr:mega) will have to be updated based on the board you are using. A script set-fqbn has been provided for ease of use.
-- The device port (default is /dev/ttyACM0) will have to be updated too. A script set-port has been provided for ease of use.
+```
+set-fqbn arduino:avr:uno
+```
+- The device port (default is /dev/ttyACM0) will have to be updated too. A script set-port has been provided for ease of use. If you're not on Linux, replace tty in the script to the appropriate terminal, e.g pts/cu/acm.
+```
+set-port /dev/ttyUSB0
+```
 
 ## Usage 
 All scripts are used in the same way, for example:
