@@ -9,15 +9,15 @@
 Custom scripts for [arduinocli](https://arduino.github.io/arduino-cli/1.2/), to make compiling / uploading / serial monitor easier, so the dev port and FQBN do not have to be specified every time.
 
 ## Setup 
-Place the scripts in a directory ardcli/ that is in your path (e.g $HOME/bin/ardcli/). 
+1. Ensure [putty](https://www.putty.org/) is installed.
+2. Place the scripts in a directory ardcli/ that is in your path (e.g $HOME/bin/ardcli/). 
 To permanently add a directory to path:
 ```export PATH=$PATH:/home/user/bin/ardcli/```
-
-- The FQBN (default is arduino:avr:mega) will have to be updated based on the board you are using. A script set-fqbn has been provided for ease of use.
+3. The FQBN (default is arduino:avr:mega) will have to be updated based on the board you are using. A script set-fqbn has been provided for ease of use.
 ```
 set-fqbn arduino:avr:uno
 ```
-- The device port (default is /dev/ttyACM0) will have to be updated too. A script set-port has been provided for ease of use. If you're not on Linux, replace tty in the script to the appropriate terminal, e.g pts/cu/acm.
+4. The device port (default is /dev/ttyACM0) will have to be updated too. A script set-port has been provided for ease of use. If you're not on Linux, replace tty in the script to the appropriate terminal, e.g pts/cu/acm.
 ```
 set-port /dev/ttyUSB0
 ```
