@@ -1,6 +1,6 @@
 
 # Base command
-UPL_CMD="arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:mega
+UPL_CMD="arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:uno"
 
 # Check if the user provided an argument
 if [ -z "$1" ]; then

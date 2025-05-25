@@ -1,6 +1,6 @@
 
 # Base command
-BASE_CMD="arduino-cli compile --fqbn arduino:avr:mega
+BASE_CMD="arduino-cli compile --fqbn arduino:avr:uno"
 
 # Check if the user provided an argument
 if [ -z "$1" ]; then
